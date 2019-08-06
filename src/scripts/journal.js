@@ -52,14 +52,3 @@ document.querySelector("#BTN").addEventListener("click", () => {
             mood.value = ""
         })
 })
-
-// Add new method named saveJournalEntry to your data module. It should take the entry object as an argument.
-// Implement the method using fetch to perform a POST request.
-// In main module, invoke method to save entry, then add item to local array.
-// Update DOM with updated array values.
-// post.then(get).then(render)
-
-
-
-// allEntries.push({date, concept, entry, mood})
-// renderJournalEntries(allEntries)
