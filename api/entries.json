@@ -44,9 +44,9 @@
     },
     {
       "date": "2019-08-06",
-      "concept": "aadfads",
-      "content": "asdfasd",
-      "mood": "sad",
+      "concept": "Journal",
+      "content": "I worked with Sarah Fleming to get my journal to save to my API and to render to the dom. This shit is confusing, but I'm figuring it out little by little as I go along.",
+      "mood": "confused",
       "id": 7
     }
   ]

@@ -32,16 +32,26 @@ const createNewJournalEntry = (date, concept, content, mood) => {
 }
 
 
+const journalEntryContainer = document.querySelector("#entryLog")
+
 document.querySelector("#BTN").addEventListener("click", () => {
     const journalEntryObject = createNewJournalEntry(date, concept, content, mood)
         API.saveJournalEntry(journalEntryObject)
         .then(API.getJournalEntries)
-        .then((entries) => {console.log(entries)})
-           
-    //         then get array then render array
-    // })
+        .then(entries => {
+            journalEntryContainer.innerHTML = ""
+            entries.forEach(entry => {
+                const journalHTML = createJournalEntryComponent(entry)
+                entryToDom(journalHTML)
+        })
 })
-
+        .then(() => {
+            date.value = ""
+            concept.value = ""
+            content.value = ""
+            mood.value = ""
+        })
+})
 
 // Add new method named saveJournalEntry to your data module. It should take the entry object as an argument.
 // Implement the method using fetch to perform a POST request.
