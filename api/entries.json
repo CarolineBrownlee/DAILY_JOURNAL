@@ -1,0 +1,45 @@
+{
+    "entries": [
+    {
+        "date": "July 12, 2019",
+        "concept": "JavaScript Objects and Arrays",
+        "content": "Today I worked with objects and arrays and logging to the console.",
+        "mood": "confused"
+    },
+
+    {
+        "date": "July 12, 2019",
+        "concept": "Flexbox",
+        "content": "I learned to use flexbox to style in CSS.",
+        "mood": "happy"
+    },
+
+    {
+        "date": "July 12, 2019",
+        "concept": "Group Project",
+        "content": "We started a group project building and designing a tribute website for John Legend.",
+        "mood": "happy"
+    },
+
+    {
+        "date": "July 12, 2019",
+        "concept": "Using GitHub",
+        "content": "Today I learned to set up repositories and push to master through the command line.",
+        "mood": "confused"
+    }, 
+
+    {
+        "date": "July 19, 2019",
+        "concept": "Exploring JSON and Postman",
+        "content": "Today we began exploring JSON and working with Postman to make changes to our javaScript document and the DOM. I worked on my journal during labtime. Bryan helped me with syntax and troubleshooting the issues I was having. I feel like I left today with more confidence in myself as a blossoming web developer. I need to work on not trying to perfect everything, but allowing the process to take shape. Keep learning! Keep going.",
+        "mood": "confused"
+    }, 
+    
+    {
+        "date": "July 31, 2019",
+        "concept": "Welcome to Nashville",
+        "content": "We worked on a group projected called Welcome to Nashville, which I found to be very difficult. Several times I questioned whether, or not I belong at NSS. It seems like I should have retained more information by now, but my brain must have a leak. They keep telling me this is a normal part of the process. Little by little, I'm learning to accept the unknown and look for the answers.",
+        "mood": "frustrated"
+    }
+    ]
+}

@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="styles/journal.css">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <h1>Daily Journal</h1>
-
-    <form action="">
         
-        <fieldset class="container">
+        <fieldset>
             <label for="journalDate">Date of entry</label>
             <input type="date" name="journalDate" id="journalDate">
         </fieldset>
@@ -26,30 +25,28 @@
       
         <fieldset>
             <label for="journalDate">Journal Entry</label>
-            <textarea name="message" row="1" column="2"></textarea>
+            <textarea name="message" row="1" column="2" id="content"></textarea>
         </fieldset>
     
         <fieldset>
             <label for="journalDate">Mood for the Day</label>
-            <select>
+            <select id="mood">
                 <option value="sad">Sad</option>
-                <option value="happy" selected>Happy</option>
+                <option value="happy">Happy</option>
                 <option value="mad">Mad</option>
                 <option value="confused">Confused</option>
             </select>
         </fieldset>
 
         <fieldset>
-            <input type="button" onclick="alert('Your entry has been submitted.')" value="Record Journal Entry!">
+            <button id="BTN">Record Journal Entry</button>
+            <!-- <input type="button" onclick="alert('Your entry has been submitted.')" value="Record Journal Entry!"> -->
         </fieldset>
        
-    </form>
 
-    <article class="entryLog">
-
-    </article>
-
-    <script src="scripts/journal.js"></script>
+    <article id="entryLog"></article>
+    
+    <script type="module" src="scripts/journal.js"></script>
 
 </body>
 

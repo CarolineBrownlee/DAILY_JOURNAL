@@ -1,79 +1,53 @@
+// Reference to dom
+// Event listener
+// Get data
+// Html Representation
+// Render to dom
 
-const journalEntries = [
-    {
-        date: "July 12, 2019",
-        concept: "JavaScript Objects and Arrays",
-        content: "Worked with objects and arrays and logging to the console",
-        mood: "confused"
-    },
+import API from "./data.js"
+import createJournalEntryComponent from "./entryComponent.js"
+import entryToDom from "./entriesDOM.js"
 
-    {
-        date: "July 12, 2019",
-        concept: "Flexbox",
-        content: "I learned to use flexbox to style in CSS.",
-        mood: "happy"
-    },
 
-    {
-        date: "July 12, 2019",
-        concept: "Group Project",
-        content: "Learned to work in a group to build and design a tribute sight for John Legend.",
-        mood: "happy"
-    },
+        API.getJournalEntries().then(entriesArray => {
+            entriesArray.forEach(entry => {
+                const journalHTML = createJournalEntryComponent(entry)
+                entryToDom(journalHTML)
+       })
+    })
 
-    {
-        date: "July 12, 2019",
-        concept: "Using GitHub",
-        content: "We learned to set up repositories and push to master through the command line.",
-        mood: "confused"
-    }, 
-    {
-        date: "July 19, 2019",
-        concept: "Worked with Bryan on Complicated Shit",
-        content: "Figured it out...sort of.",
-        mood: "confused"
-    }, 
 
-]
+const date = document.getElementById("journalDate")
+const concept = document.getElementById("conceptsCovered")
+const content = document.getElementById("content")
+const mood = document.getElementById("mood")
 
-/*
-    Purpose: To create, and return, a string template that
-    represents a single journal entry object as HTML
-
-    Arguments: journalEntry (object)*/
-
-const journalEntryContainer = document.querySelector(".entryLog")
-
-const makeJournalEntryComponent = journalEntry => {
-    const entryLog =
-    `
-    <section>
-
-        <h1>${journalEntry.date}</h1>
-
-        <h2>${journalEntry.concept}</h2>
-
-        <div>${journalEntry.content}</div>
-        <div>${journalEntry.mood}</div>
-
-    </section>
-
-`
-    journalEntryContainer.innerHTML += entryLog   
+const createNewJournalEntry = (date, concept, content, mood) => {
+    return {
+    "date": date.value,
+    "concept": concept.value,
+    "content": content.value,
+    "mood": mood.value
+    }
 }
 
 
-// makeJournalEntryComponent(journalEntries[0])
-journalEntries.forEach(entry => makeJournalEntryComponent(entry) ) 
+document.querySelector("#BTN").addEventListener("click", () => {
+    const journalEntryObject = createNewJournalEntry(date, concept, content, mood)
+        console.log(journalEntryObject)
+        API.saveJournalEntry(journalEntryObject).then(result => {
+           // then get array then render array
+    })
+})
 
-// /*
-//     Purpose: To render all journal entries to the DOM
 
-//     Arguments: entries (array of objects)
-// */
-// const renderJournalEntries = (entries) => {
+// Add new method named saveJournalEntry to your data module. It should take the entry object as an argument.
+// Implement the method using fetch to perform a POST request.
+// In main module, invoke method to save entry, then add item to local array.
+// Update DOM with updated array values.
+// post.then(get).then(render)
 
-// }
 
-// // Invoke the render function
-// renderJournalEntries(journalEntries)
+
+// allEntries.push({date, concept, entry, mood})
+// renderJournalEntries(allEntries)

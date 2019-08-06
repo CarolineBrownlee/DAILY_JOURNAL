@@ -2,3 +2,34 @@
     display: flex;
     flex-direction: column;
 }
+
+#entryLog {
+    background-color: #2a334f;
+    display: flex;
+    flex-wrap: wrap;
+}
+.section {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border-top-width: 20px;
+    border-bottom-width: 20px;
+    padding-right: 30px;
+    border-left-width: 30px;
+    border-right-width: 30px;
+    
+}
+
+.concept {
+    color: #973529;
+    font-family: 'Special Elite';
+}
+
+.content {
+    font-family: 'Oswald', cursive;
+}
+.mood {
+    color: #a84600;
+    font-family: 'Oswald';
+}
