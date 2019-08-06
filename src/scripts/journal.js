@@ -34,10 +34,12 @@ const createNewJournalEntry = (date, concept, content, mood) => {
 
 document.querySelector("#BTN").addEventListener("click", () => {
     const journalEntryObject = createNewJournalEntry(date, concept, content, mood)
-        console.log(journalEntryObject)
-        API.saveJournalEntry(journalEntryObject).then(result => {
-           // then get array then render array
-    })
+        API.saveJournalEntry(journalEntryObject)
+        .then(API.getJournalEntries)
+        .then((entries) => {console.log(entries)})
+           
+    //         then get array then render array
+    // })
 })
 
 
