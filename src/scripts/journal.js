@@ -52,3 +52,27 @@ document.querySelector("#BTN").addEventListener("click", () => {
             mood.value = ""
         })
 })
+
+
+        
+const radioButtons = document.getElementsByName("mood")
+
+radioButtons.forEach(button => {
+   button.addEventListener("click", event => {
+        const mood = event.target.value
+        // get journal entries (api.getjournalentries)
+        API.getJournalEntries().then(entries => {
+            const filteredArray = entries.filter(entry => entry.mood === mood)
+            return filteredArray
+        })
+        .then(filteredArray => {
+            journalEntryContainer.innerHTML = ""
+            entryToDom(filteredArray) // clear the dom and put filtered Array on the dom
+        }) 
+    })
+})
+
+// Once you have filtered the entries by mood, invoke the function
+//  that renders the HTML representations to the DOM and pass it the filtered array of entries.
+
+
