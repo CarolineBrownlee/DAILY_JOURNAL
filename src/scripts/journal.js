@@ -55,6 +55,8 @@ document.querySelector("#BTN").addEventListener("click", () => {
 
 
         
+
+
 const radioButtons = document.getElementsByName("mood")
 
 radioButtons.forEach(button => {
@@ -67,12 +69,14 @@ radioButtons.forEach(button => {
         })
         .then(filteredArray => {
             journalEntryContainer.innerHTML = ""
-            entryToDom(filteredArray) // clear the dom and put filtered Array on the dom
+            filteredArray.forEach(entry => {
+                const moodEntry = createJournalEntryComponent(entry)
+                entryToDom(moodEntry)
+
+            }); // clear the dom and put filtered Array on the dom
         }) 
     })
 })
 
 // Once you have filtered the entries by mood, invoke the function
 //  that renders the HTML representations to the DOM and pass it the filtered array of entries.
-
-

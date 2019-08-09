@@ -48,6 +48,13 @@
       "content": "I worked with Sarah Fleming to get my journal to save to my API and to render to the dom. This shit is confusing, but I'm figuring it out little by little as I go along.",
       "mood": "confused",
       "id": 7
+    },
+    {
+      "date": "2019-08-09",
+      "concept": "Filtering Journal Entries by Mood",
+      "content": "I wish I could figure out how to do this all by myself. But holy shit!",
+      "mood": "sad",
+      "id": 8
     }
   ]
 }
