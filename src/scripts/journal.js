@@ -16,6 +16,7 @@ import entryToDom from "./entriesDOM.js"
        })
     })
 
+const submitJournalEntry = document.querySelector("#BTN")
 
 const date = document.getElementById("journalDate")
 const concept = document.getElementById("conceptsCovered")
@@ -78,5 +79,34 @@ radioButtons.forEach(button => {
     })
 })
 
-// Once you have filtered the entries by mood, invoke the function
-//  that renders the HTML representations to the DOM and pass it the filtered array of entries.
+
+
+// delete entry
+
+journalEntryContainer.addEventListener("click", () => {
+        if (event.target.id.startsWith("deleteBTN--")) {
+            const entryToDelete = event.target.id.split("--")[1]
+            
+            API.deleteEntry(entryToDelete)
+            .then(API.getJournalEntries)
+            .then(entries => {
+                journalEntryContainer.innerHTML = ""
+                entryToDom(entries)   
+            })
+        } else if (event.target.id.startsWith("editBTN--")) {
+        submitJournalEntry.value = "Save Entry"
+        const entryToEdit = event.target.id.split("--")[1]
+
+        API.getSingleJournalEntry(entryToEdit)
+            .then(entry => {
+                hiddenJournalId.value = entry.id
+                date.value = entry.date
+                concept.value = entry.concept
+                entry.value = entry.entry
+                mood.value = entry.mood
+            })
+    }
+})
+
+
+
